@@ -1,0 +1,477 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --radius: 0.375rem;
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 214 32% 95%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 88%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
+    --chart-1: 217 91% 60%;
+    --chart-2: 142 76% 36%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 82% 52%;
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 25% 27%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 215 20% 20%;
+    --sidebar-ring: 217 91% 60%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+    
+    /* Decision Intelligence Interface colors */
+    --critical: 0 84% 60%;
+    --healthy: 142 76% 36%;
+    --insight: 217 91% 60%;
+    --ai-primary: 262 83% 58%;
+    --ai-secondary: 270 91% 65%;
+    --ai-foreground: 0 0% 100%;
+    
+    /* Risk-based color scales with dynamic intensity */
+    --risk-critical: 0 84% 60%;
+    --risk-critical-light: 0 84% 70%;
+    --risk-critical-lighter: 0 84% 85%;
+    --risk-high: 15 90% 55%;
+    --risk-high-light: 15 90% 70%;
+    --risk-medium: 38 92% 50%;
+    --risk-medium-light: 38 92% 65%;
+    --risk-low: 142 76% 36%;
+    --risk-low-light: 142 76% 50%;
+    --risk-minimal: 142 76% 45%;
+    --risk-minimal-light: 142 76% 60%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 215 28% 17%;
+    --card-foreground: 210 40% 98%;
+    --popover: 215 28% 17%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 25% 27%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 25% 23%;
+    --muted-foreground: 215 16% 65%;
+    --accent: 215 25% 27%;
+    --accent-foreground: 217 91% 70%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 25% 27%;
+    --input: 215 25% 27%;
+    --ring: 217 91% 60%;
+    --chart-1: 217 91% 60%;
+    --chart-2: 142 76% 36%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 82% 52%;
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 25% 27%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 215 20% 20%;
+    --sidebar-ring: 217 91% 60%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+    
+    /* Decision Intelligence Interface colors */
+    --critical: 0 84% 60%;
+    --healthy: 142 76% 36%;
+    --insight: 217 91% 60%;
+    --ai-primary: 262 83% 58%;
+    --ai-secondary: 270 91% 65%;
+    --ai-foreground: 0 0% 100%;
+    
+    /* Risk-based color scales with dynamic intensity (dark mode) */
+    --risk-critical: 0 84% 65%;
+    --risk-critical-light: 0 84% 75%;
+    --risk-critical-lighter: 0 84% 85%;
+    --risk-high: 15 90% 60%;
+    --risk-high-light: 15 90% 75%;
+    --risk-medium: 38 92% 55%;
+    --risk-medium-light: 38 92% 70%;
+    --risk-low: 142 76% 40%;
+    --risk-low-light: 142 76% 55%;
+    --risk-minimal: 142 76% 50%;
+    --risk-minimal-light: 142 76% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl leading-tight;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    @apply text-3xl leading-tight;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    @apply text-2xl leading-snug;
+  }
+
+  h4 {
+    @apply text-xl leading-snug;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .transition-smooth {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover {
+    @apply transition-smooth hover:border-primary/30 hover:shadow-md;
+  }
+
+  .card-enterprise {
+    @apply bg-card border border-border rounded-lg shadow-sm;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent;
+  }
+
+  .section-header {
+    @apply border-b border-border pb-4 mb-6;
+  }
+
+  .data-table {
+    @apply w-full border-collapse;
+  }
+
+  .data-table th {
+    @apply bg-muted/50 px-4 py-3 text-left text-sm font-semibold text-foreground border-b border-border;
+  }
+
+  .data-table td {
+    @apply px-4 py-3 text-sm border-b border-border;
+  }
+
+  .data-table tr:hover td {
+    @apply bg-muted/30;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-active {
+    @apply bg-success/10 text-success border border-success/20;
+  }
+
+  .status-pending {
+    @apply bg-warning/10 text-warning border border-warning/20;
+  }
+
+  .status-inactive {
+    @apply bg-muted text-muted-foreground border border-border;
+  }
+
+  .metric-card {
+    @apply card-enterprise p-6 hover:shadow-lg transition-all duration-200;
+  }
+
+  .page-header {
+    @apply flex items-center justify-between pb-6 border-b border-border mb-6;
+  }
+
+  .section-spacing {
+    @apply space-y-8;
+  }
+
+  .content-spacing {
+    @apply space-y-6;
+  }
+
+  .form-spacing {
+    @apply space-y-4;
+  }
+}
+
+@layer components {
+  .page-header {
+    @apply flex items-center justify-between mb-8;
+  }
+
+  .page-title {
+    @apply text-4xl font-semibold tracking-tight text-foreground;
+  }
+
+  .section-title {
+    @apply text-2xl font-semibold tracking-tight text-foreground mb-4;
+  }
+
+  .card-enhanced {
+    @apply rounded-lg border border-border bg-card text-card-foreground shadow-sm transition-smooth hover:border-primary/20;
+  }
+
+  .empty-state {
+    @apply flex flex-col items-center justify-center py-16 text-center;
+  }
+
+  .empty-state-icon {
+    @apply h-12 w-12 text-muted-foreground/50 mb-4;
+  }
+
+  .empty-state-title {
+    @apply text-lg font-medium text-foreground mb-2;
+  }
+
+  .empty-state-description {
+    @apply text-sm text-muted-foreground max-w-sm;
+  }
+
+  .stat-card {
+    @apply rounded-lg border border-border bg-card p-6 transition-smooth hover:border-primary/20 hover:shadow-sm;
+  }
+
+  .stat-label {
+    @apply text-sm font-medium text-muted-foreground mb-1;
+  }
+
+  .stat-value {
+    @apply text-3xl font-semibold tracking-tight text-foreground;
+  }
+
+  .badge-enhanced {
+    @apply inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-medium transition-smooth;
+  }
+}
+
+/* Gantt Chart Styles */
+.gantt-container {
+  overflow-x: auto;
+}
+
+.gantt-container .gantt {
+  font-family: inherit;
+}
+
+.gantt-container ._3uo9D {
+  fill: hsl(var(--background));
+  stroke: hsl(var(--border));
+}
+
+.gantt-container ._2rP4T {
+  fill: hsl(var(--muted));
+}
+
+.gantt-container ._1xmCt {
+  fill: hsl(var(--foreground));
+  font-size: 12px;
+}
+
+.gantt-container ._2rP4T:hover {
+  fill: hsl(var(--accent));
+}
+
+/* AI-Native Motion Design & Animations */
+@layer utilities {
+  /* Zoom transitions */
+  .zoom-transition {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease-in-out;
+  }
+
+  .zoom-in {
+    animation: zoomIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .zoom-out {
+    animation: zoomOut 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes zoomOut {
+    from {
+      transform: scale(1.05);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* Data transitions */
+  .data-fade-in {
+    animation: dataFadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes dataFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Context-preserving slide */
+  .slide-in-right {
+    animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .slide-out-left {
+    animation: slideOutLeft 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideOutLeft {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+
+  /* Predictive pulse animation */
+  .predictive-pulse {
+    animation: predictivePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes predictivePulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.02);
+    }
+  }
+
+  /* AI glow effect */
+  .ai-glow {
+    animation: aiGlow 3s ease-in-out infinite;
+  }
+
+  @keyframes aiGlow {
+    0%, 100% {
+      box-shadow: 0 0 10px hsl(var(--ai-primary) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 20px hsl(var(--ai-primary) / 0.5);
+    }
+  }
+
+  /* Smooth height transition */
+  .height-transition {
+    transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Risk intensity colors */
+  .risk-critical-bg {
+    background-color: hsl(var(--risk-critical) / 0.1);
+    border-color: hsl(var(--risk-critical) / 0.3);
+  }
+
+  .risk-high-bg {
+    background-color: hsl(var(--risk-high) / 0.1);
+    border-color: hsl(var(--risk-high) / 0.3);
+  }
+
+  .risk-medium-bg {
+    background-color: hsl(var(--risk-medium) / 0.1);
+    border-color: hsl(var(--risk-medium) / 0.3);
+  }
+
+  .risk-low-bg {
+    background-color: hsl(var(--risk-low) / 0.1);
+    border-color: hsl(var(--risk-low) / 0.3);
+  }
+
+  .risk-minimal-bg {
+    background-color: hsl(var(--risk-minimal) / 0.1);
+    border-color: hsl(var(--risk-minimal) / 0.3);
+  }
+}
+
