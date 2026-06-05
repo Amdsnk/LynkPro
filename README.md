@@ -2,6 +2,8 @@
 
 # LynkPro
 
+https://app-b5zp3rg0kzcx.appmedo.com/
+
 **AI-powered construction management platform for the AEC industry**
 
 Predict risks. Prevent delays. Deliver on time.
